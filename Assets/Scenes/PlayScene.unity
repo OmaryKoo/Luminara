@@ -1294,6 +1294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 269648420}
   - component: {fileID: 269648421}
+  - component: {fileID: 269648422}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Untagged
@@ -1313,7 +1314,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 860789599}
+  - {fileID: 994906921}
+  - {fileID: 880324051}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &269648421
@@ -1333,6 +1337,19 @@ MonoBehaviour:
   chickObject: {fileID: 994906918}
   chickenObject: {fileID: 880324048}
   evolveThreshold: 30
+--- !u!114 &269648422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269648419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3363f28423667204c85d2edab7a460bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
 --- !u!1 &279547440
 GameObject:
   m_ObjectHideFlags: 0
@@ -4248,7 +4265,6 @@ GameObject:
   - component: {fileID: 860789598}
   - component: {fileID: 860789597}
   - component: {fileID: 860789600}
-  - component: {fileID: 860789601}
   m_Layer: 0
   m_Name: Egg
   m_TagString: Player
@@ -4341,12 +4357,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 860789596}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 269648420}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &860789600
 CircleCollider2D:
@@ -4384,19 +4400,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.15
---- !u!114 &860789601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 860789596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3363f28423667204c85d2edab7a460bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
 --- !u!1 &872868762
 GameObject:
   m_ObjectHideFlags: 0
@@ -4546,7 +4549,6 @@ GameObject:
   - component: {fileID: 880324050}
   - component: {fileID: 880324049}
   - component: {fileID: 880324052}
-  - component: {fileID: 880324053}
   m_Layer: 0
   m_Name: Chicken
   m_TagString: Player
@@ -4639,12 +4641,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880324048}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 269648420}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &880324052
 CircleCollider2D:
@@ -4682,19 +4684,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.265
---- !u!114 &880324053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 880324048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3363f28423667204c85d2edab7a460bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 15
 --- !u!1 &885481751
 GameObject:
   m_ObjectHideFlags: 0
@@ -5616,7 +5605,6 @@ GameObject:
   - component: {fileID: 994906920}
   - component: {fileID: 994906919}
   - component: {fileID: 994906922}
-  - component: {fileID: 994906923}
   m_Layer: 0
   m_Name: Chick
   m_TagString: Player
@@ -5709,12 +5697,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994906918}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 269648420}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &994906922
 CircleCollider2D:
@@ -5752,19 +5740,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.185
---- !u!114 &994906923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994906918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3363f28423667204c85d2edab7a460bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 10
 --- !u!1 &1010828548
 GameObject:
   m_ObjectHideFlags: 0
@@ -11504,8 +11479,5 @@ SceneRoots:
   - {fileID: 505988689}
   - {fileID: 949598123}
   - {fileID: 1629761726}
-  - {fileID: 860789599}
-  - {fileID: 994906921}
-  - {fileID: 880324051}
   - {fileID: 269648420}
   - {fileID: 251386255}
