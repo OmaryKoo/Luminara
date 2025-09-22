@@ -9,9 +9,21 @@ public class PlayerMovement : MonoBehaviour
 
     private Transform currentPlayer;
 
+    private FollowCamera followCam;
+
+void Start()
+{
+    followCam = Camera.main.GetComponent<FollowCamera>();
+}
+
     void Update()
     {
         currentPlayer = GetActivePlayerTransform();
+
+         if (followCam != null && currentPlayer != null)
+    {
+        followCam.SetTarget(currentPlayer);
+    }
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -44,4 +56,6 @@ public class PlayerMovement : MonoBehaviour
         }
         return null;
     }
+
+    
 }
