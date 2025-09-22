@@ -187,6 +187,30 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 198748860471195150, guid: 21eec9b7e8e445a42bb35f179cb85e4f, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198748860471195150, guid: 21eec9b7e8e445a42bb35f179cb85e4f, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key0.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198748860471195150, guid: 21eec9b7e8e445a42bb35f179cb85e4f, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198748860471195150, guid: 21eec9b7e8e445a42bb35f179cb85e4f, type: 3}
+      propertyPath: InitialModule.startColor.minGradient.ctime0
+      value: 24929
+      objectReference: {fileID: 0}
+    - target: {fileID: 198748860471195150, guid: 21eec9b7e8e445a42bb35f179cb85e4f, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.m_ColorSpace
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198748860471195150, guid: 21eec9b7e8e445a42bb35f179cb85e4f, type: 3}
+      propertyPath: InitialModule.startColor.minGradient.m_ColorSpace
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 199954450694108968, guid: 21eec9b7e8e445a42bb35f179cb85e4f, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -1808,6 +1832,7 @@ GameObject:
   - component: {fileID: 860789598}
   - component: {fileID: 860789597}
   - component: {fileID: 860789600}
+  - component: {fileID: 860789601}
   m_Layer: 0
   m_Name: Egg
   m_TagString: Player
@@ -1943,6 +1968,33 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.15
+--- !u!50 &860789601
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860789596}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &863127702 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1313361042798970651, guid: b221e60ea263c5e43beaf334e52da081, type: 3}
@@ -1960,6 +2012,7 @@ GameObject:
   - component: {fileID: 880324050}
   - component: {fileID: 880324049}
   - component: {fileID: 880324052}
+  - component: {fileID: 880324053}
   m_Layer: 0
   m_Name: Chicken
   m_TagString: Player
@@ -2095,6 +2148,33 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.265
+--- !u!50 &880324053
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880324048}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &910707701 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1313361042798970651, guid: b221e60ea263c5e43beaf334e52da081, type: 3}
@@ -2226,6 +2306,7 @@ GameObject:
   - component: {fileID: 994906920}
   - component: {fileID: 994906919}
   - component: {fileID: 994906922}
+  - component: {fileID: 994906923}
   m_Layer: 0
   m_Name: Chick
   m_TagString: Player
@@ -2361,6 +2442,33 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.185
+--- !u!50 &994906923
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994906918}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1006323250 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1313361042798970651, guid: b221e60ea263c5e43beaf334e52da081, type: 3}
