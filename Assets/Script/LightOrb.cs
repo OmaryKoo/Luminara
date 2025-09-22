@@ -6,7 +6,7 @@ public class LightOrb : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            FindObjectOfType<PlayerEvolution>().CollectLightOrb();
+            FindFirstObjectByType<PlayerEvolution>()?.CollectLightOrb();
             Destroy(gameObject);
         }
     }

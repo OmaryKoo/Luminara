@@ -43,15 +43,38 @@ public class PlayerEvolution : MonoBehaviour
 
     /// <summary>
     /// 현재 진화 단계를 설정하고, 다른 단계는 모두 비활성화
-    /// </summary>
-    /// <param name="newStage">전환할 진화 단계</param>
     private void SetStage(EvolutionStage newStage)
     {
-        currentStage = newStage;
+        // 이전 활성 오브젝트의 위치 저장
+        Vector3 currentPosition = Vector3.zero;
 
-        // 모든 오브젝트 비활성화 후, 해당 오브젝트만 활성화
-        eggObject.SetActive(newStage == EvolutionStage.Egg);
-        chickObject.SetActive(newStage == EvolutionStage.Chick);
-        chickenObject.SetActive(newStage == EvolutionStage.Chicken);
+        if (eggObject.activeSelf) currentPosition = eggObject.transform.position;
+        else if (chickObject.activeSelf) currentPosition = chickObject.transform.position;
+        else if (chickenObject.activeSelf) currentPosition = chickenObject.transform.position;
+
+        // 모든 오브젝트 비활성화
+        eggObject.SetActive(false);
+        chickObject.SetActive(false);
+        chickenObject.SetActive(false);
+
+        // 새로운 오브젝트 활성화 + 위치 이전
+        if (newStage == EvolutionStage.Egg)
+        {
+            eggObject.SetActive(true);
+            eggObject.transform.position = currentPosition;
+        }
+        else if (newStage == EvolutionStage.Chick)
+        {
+            chickObject.SetActive(true);
+            chickObject.transform.position = currentPosition;
+        }
+        else if (newStage == EvolutionStage.Chicken)
+        {
+            chickenObject.SetActive(true);
+            chickenObject.transform.position = currentPosition;
+        }
+
+        currentStage = newStage;
     }
+
 }
