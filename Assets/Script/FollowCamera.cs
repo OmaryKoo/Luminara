@@ -8,7 +8,7 @@ public class FollowCamera : MonoBehaviour
 
     void LateUpdate()
     {
-        if (playerTarget = null) return;
+        if (playerTarget == null) return;
 
         Vector3 desiredPosition = playerTarget.position + offset;
          transform.position = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);

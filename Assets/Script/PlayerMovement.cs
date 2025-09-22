@@ -18,12 +18,6 @@ void Start()
 
     void Update()
     {
-        currentPlayer = GetActivePlayerTransform();
-
-         if (followCam != null && currentPlayer != null)
-    {
-        followCam.SetTarget(currentPlayer);
-    }
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -32,12 +26,22 @@ void Start()
             {
                 startTouchPos = touch.position;
             }
-            else if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
+            else if (touch.phase == TouchPhase.Moved)
             {
                 endTouchPos = touch.position;
                 Vector2 direction = (endTouchPos - startTouchPos).normalized;
                 Move(direction);
             }
+        }
+    }
+
+    void LateUpdate()
+    {
+         currentPlayer = GetActivePlayerTransform();
+
+         if (followCam != null && currentPlayer != null)
+         {
+              followCam.SetTarget(currentPlayer);
         }
     }
 
