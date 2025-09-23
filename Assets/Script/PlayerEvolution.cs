@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerEvolution : MonoBehaviour
@@ -9,6 +10,7 @@ public class PlayerEvolution : MonoBehaviour
     public GameObject eggObject;
     public GameObject chickObject;
     public GameObject chickenObject;
+    public GameObject phoenixObject;
 
     // 빛 오브젝트를 먹은 개수
     private int lightOrbsCollected = 0;
@@ -38,6 +40,8 @@ public class PlayerEvolution : MonoBehaviour
                 SetStage(EvolutionStage.Chick);
             else if (currentStage == EvolutionStage.Chick)
                 SetStage(EvolutionStage.Chicken);
+            else if (currentStage == EvolutionStage.Chicken)
+                SetStage(EvolutionStage.Phoenix);
         }
     }
 
@@ -51,11 +55,13 @@ public class PlayerEvolution : MonoBehaviour
         if (eggObject.activeSelf) currentPosition = eggObject.transform.position;
         else if (chickObject.activeSelf) currentPosition = chickObject.transform.position;
         else if (chickenObject.activeSelf) currentPosition = chickenObject.transform.position;
+        else if (phoenixObject.activeSelf) currentPosition = phoenixObject.transform.position;
 
         // 모든 오브젝트 비활성화
         eggObject.SetActive(false);
         chickObject.SetActive(false);
         chickenObject.SetActive(false);
+        phoenixObject.SetActive(false);
 
         // 새로운 오브젝트 활성화 + 위치 이전
         if (newStage == EvolutionStage.Egg)
@@ -72,6 +78,11 @@ public class PlayerEvolution : MonoBehaviour
         {
             chickenObject.SetActive(true);
             chickenObject.transform.position = currentPosition;
+        }
+        else if (newStage == EvolutionStage.Phoenix)
+        {
+            phoenixObject.SetActive(true);
+            phoenixObject.transform.position = currentPosition;
         }
 
         currentStage = newStage;
