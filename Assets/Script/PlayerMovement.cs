@@ -3,9 +3,13 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    public float deceleration = 5f;
 
     private Vector2 startTouchPos;  // 🔹 터치 시작 위치
     private Vector2 endTouchPos;    // 🔹 터치 종료 or 이동 위치
+
+    private Vector2 currentDirection = Vector2.zero;
+    private Vector2 velocity = Vector2.zero;
 
     private Transform currentPlayer;
 
@@ -29,10 +33,16 @@ void Start()
             else if (touch.phase == TouchPhase.Moved)
             {
                 endTouchPos = touch.position;
-                Vector2 direction = (endTouchPos - startTouchPos).normalized;
-                Move(direction);
+                currentDirection = (endTouchPos - startTouchPos).normalized;
             }
         }
+        else
+        {
+            currentDirection = Vector2.Lerp(currentDirection, Vector2.zero, Time.deltaTime * deceleration);
+        }
+
+        velocity = currentDirection * moveSpeed;
+        Move(velocity);
     }
 
     void LateUpdate()
