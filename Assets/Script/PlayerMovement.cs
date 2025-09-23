@@ -4,6 +4,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float deceleration = 5f;
+    public BoxCollider2D moveArea;
 
     private Vector2 startTouchPos;  // 🔹 터치 시작 위치
     private Vector2 endTouchPos;    // 🔹 터치 종료 or 이동 위치
@@ -56,10 +57,17 @@ void Start()
     }
 
     private void Move(Vector2 direction)
+{
+    if (currentPlayer == null || moveArea == null)
+        return;
+
+    Vector3 nextPos = currentPlayer.position + (Vector3)(direction * Time.deltaTime);
+
+    if (moveArea.bounds.Contains(nextPos))
     {
-        if (currentPlayer != null)
-            currentPlayer.Translate(direction * moveSpeed * Time.deltaTime);
+        currentPlayer.position = nextPos;
     }
+}
 
     private Transform GetActivePlayerTransform()
     {
@@ -71,5 +79,4 @@ void Start()
         return null;
     }
 
-    
 }

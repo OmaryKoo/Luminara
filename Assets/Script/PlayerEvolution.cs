@@ -11,6 +11,12 @@ public class PlayerEvolution : MonoBehaviour
     public GameObject chickObject;
     public GameObject chickenObject;
     public GameObject phoenixObject;
+    public ParticleSystem glowEffect;
+
+    public float glowBaseScale = 0.01f;
+    public int scaleIncreaseStep = 10; // 10개마다 scale 증가
+    public float scaleIncrement = 0.01f;
+
 
     // 빛 오브젝트를 먹은 개수
     private int lightOrbsCollected = 0;
@@ -31,6 +37,8 @@ public class PlayerEvolution : MonoBehaviour
     {
         lightOrbsCollected++;
 
+        UpdateParticleScale();
+
         // 현재 상태가 Egg 또는 Chick일 때만 진화 조건 검사
         if (lightOrbsCollected >= evolveThreshold)
         {
@@ -44,6 +52,16 @@ public class PlayerEvolution : MonoBehaviour
                 SetStage(EvolutionStage.Phoenix);
         }
     }
+
+    private void UpdateParticleScale()
+{
+    if (glowEffect != null)
+    {
+        int multiplier = lightOrbsCollected / scaleIncreaseStep;
+        float newScale = glowBaseScale + (multiplier * scaleIncrement);
+        glowEffect.transform.localScale = Vector3.one * newScale;
+    }
+}
 
     /// <summary>
     /// 현재 진화 단계를 설정하고, 다른 단계는 모두 비활성화
