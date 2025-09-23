@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerEvolution : MonoBehaviour
 {
-     // 현재 진화 단계를 저장하는 변수
+    // 현재 진화 단계를 저장하는 변수
     public EvolutionStage currentStage = EvolutionStage.Egg;
 
     // 각 진화 단계에 해당하는 오브젝트 (Hierarchy에 미리 배치)
@@ -30,6 +30,16 @@ public class PlayerEvolution : MonoBehaviour
         SetStage(currentStage);
     }
 
+    void Update()
+{
+    if (glowEffect != null)
+    {
+        Transform targetTransform = GetActiveStageTransform();
+        glowEffect.transform.position = targetTransform.position;
+    }
+}
+
+
     /// <summary>
     /// 외부에서 이 메서드를 호출하면 빛을 1개 먹은 것으로 처리되고 진화 조건검사
     /// </summary>
@@ -53,15 +63,16 @@ public class PlayerEvolution : MonoBehaviour
         }
     }
 
+
     private void UpdateParticleScale()
-{
-    if (glowEffect != null)
     {
-        int multiplier = lightOrbsCollected / scaleIncreaseStep;
-        float newScale = glowBaseScale + (multiplier * scaleIncrement);
-        glowEffect.transform.localScale = Vector3.one * newScale;
+        if (glowEffect != null)
+        {
+            int multiplier = lightOrbsCollected / scaleIncreaseStep;
+            float newScale = glowBaseScale + (multiplier * scaleIncrement);
+            glowEffect.transform.localScale = Vector3.one * newScale;
+        }
     }
-}
 
     /// <summary>
     /// 현재 진화 단계를 설정하고, 다른 단계는 모두 비활성화
@@ -104,6 +115,20 @@ public class PlayerEvolution : MonoBehaviour
         }
 
         currentStage = newStage;
+
+        if (glowEffect != null)
+            {
+                 glowEffect.transform.position = GetActiveStageTransform().position;
+             }
+    }
+
+    private Transform GetActiveStageTransform()
+    {
+        if (eggObject.activeSelf) return eggObject.transform;
+        if (chickObject.activeSelf) return chickObject.transform;
+        if (chickenObject.activeSelf) return chickenObject.transform;
+        if (phoenixObject.activeSelf) return phoenixObject.transform;
+        return transform;
     }
 
 }
