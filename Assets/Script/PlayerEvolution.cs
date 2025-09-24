@@ -130,30 +130,30 @@ public class PlayerEvolution : MonoBehaviour
     }
 
     private void UpdateMoveSpeedByStage()
-{
-    PlayerMovement moveScript = GetComponent<PlayerMovement>();
-    if (moveScript == null) return;
-
-    float newSpeed = 5f; // 기본값
-
-    switch (currentStage)
     {
-        case EvolutionStage.Egg:
-            newSpeed = 5f;
-            break;
-        case EvolutionStage.Chick:
-            newSpeed = 7f;
-            break;
-        case EvolutionStage.Chicken:
-            newSpeed = 9f;
-            break;
-        case EvolutionStage.Phoenix:
-            newSpeed = 15f;
-            break;
-    }
+        PlayerMovement moveScript = GetComponent<PlayerMovement>();
+        if (moveScript == null) return;
 
-    moveScript.moveSpeed = newSpeed;
-}
+        float newSpeed = 5f; // 기본값
+
+        switch (currentStage)
+        {
+            case EvolutionStage.Egg:
+                newSpeed = 5f;
+                break;
+            case EvolutionStage.Chick:
+                newSpeed = 7f;
+                break;
+            case EvolutionStage.Chicken:
+                newSpeed = 9f;
+                break;
+            case EvolutionStage.Phoenix:
+                newSpeed = 15f;
+                break;
+        }
+
+        moveScript.moveSpeed = newSpeed;
+    }
 
     private Transform GetActiveStageTransform()
     {
@@ -163,6 +163,15 @@ public class PlayerEvolution : MonoBehaviour
         if (phoenixObject.activeSelf) return phoenixObject.transform;
         return transform;
     }
+    
+    public Transform GetCurrentActiveTransform()
+{
+    if (eggObject.activeSelf) return eggObject.transform;
+    if (chickObject.activeSelf) return chickObject.transform;
+    if (chickenObject.activeSelf) return chickenObject.transform;
+    if (phoenixObject.activeSelf) return phoenixObject.transform;
+    return transform;
+}
     
 
 }
