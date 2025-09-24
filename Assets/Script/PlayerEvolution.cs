@@ -20,6 +20,7 @@ public class PlayerEvolution : MonoBehaviour
 
     // 빛 오브젝트를 먹은 개수
     private int lightOrbsCollected = 0;
+    private int totalLightOrbsCollected = 0; // 누적 수
 
     // 진화 조건: 몇 개의 빛을 먹으면 다음 단계로 진화할지 설정
     public int evolveThreshold = 30;
@@ -46,33 +47,36 @@ public class PlayerEvolution : MonoBehaviour
     public void CollectLightOrb()
     {
         lightOrbsCollected++;
+        totalLightOrbsCollected++; // 누적 개수 증가
 
         UpdateParticleScale();
 
-        // 현재 상태가 Egg 또는 Chick일 때만 진화 조건 검사
-        if (lightOrbsCollected >= evolveThreshold)
-        {
-            lightOrbsCollected = 0; // 다음 진화 단계로 넘어가면 카운트 초기화
+         while (lightOrbsCollected >= evolveThreshold)
+    {
+        lightOrbsCollected -= evolveThreshold;
 
-            if (currentStage == EvolutionStage.Egg)
-                SetStage(EvolutionStage.Chick);
-            else if (currentStage == EvolutionStage.Chick)
-                SetStage(EvolutionStage.Chicken);
-            else if (currentStage == EvolutionStage.Chicken)
-                SetStage(EvolutionStage.Phoenix);
-        }
+        if (currentStage == EvolutionStage.Egg)
+            SetStage(EvolutionStage.Chick);
+        else if (currentStage == EvolutionStage.Chick)
+            SetStage(EvolutionStage.Chicken);
+        else if (currentStage == EvolutionStage.Chicken)
+            SetStage(EvolutionStage.Phoenix);
+        else
+            break; // Phoenix이면 더 이상 진화하지 않음
     }
+}
 
 
     private void UpdateParticleScale()
+{
+    if (glowEffect != null)
     {
-        if (glowEffect != null)
-        {
-            int multiplier = lightOrbsCollected / scaleIncreaseStep;
-            float newScale = glowBaseScale + (multiplier * scaleIncrement);
-            glowEffect.transform.localScale = Vector3.one * newScale;
-        }
+        int multiplier = totalLightOrbsCollected / scaleIncreaseStep;
+        float newScale = glowBaseScale + (multiplier * scaleIncrement);
+
+        glowEffect.transform.localScale = Vector3.one * newScale;
     }
+}
 
     /// <summary>
     /// 현재 진화 단계를 설정하고, 다른 단계는 모두 비활성화
