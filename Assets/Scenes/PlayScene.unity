@@ -4378,6 +4378,7 @@ GameObject:
   - component: {fileID: 800091487}
   - component: {fileID: 800091486}
   - component: {fileID: 800091485}
+  - component: {fileID: 800091488}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4468,6 +4469,21 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &800091488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800091483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d7c3ea9d791ec04f86b16425561bc2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerEvolution: {fileID: 269648421}
+  offset: {x: 0.3, y: -0.5, z: 0}
+  faceCamera: 1
 --- !u!1001 &808215204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10681,7 +10697,6 @@ GameObject:
   - component: {fileID: 1931046204}
   - component: {fileID: 1931046203}
   - component: {fileID: 1931046205}
-  - component: {fileID: 1931046206}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -10732,21 +10747,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starCountText: {fileID: 62927077}
---- !u!114 &1931046206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1931046202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d7c3ea9d791ec04f86b16425561bc2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerEvolution: {fileID: 269648421}
-  offset: {x: 0.3, y: -0.5, z: 0}
-  faceCamera: 1
 --- !u!1001 &1932907052
 PrefabInstance:
   m_ObjectHideFlags: 0
