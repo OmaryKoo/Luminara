@@ -32,13 +32,13 @@ public class PlayerEvolution : MonoBehaviour
     }
 
     void Update()
-{
-    if (glowEffect != null)
     {
-        Transform targetTransform = GetActiveStageTransform();
-        glowEffect.transform.position = targetTransform.position;
+        if (glowEffect != null)
+        {
+            Transform targetTransform = GetActiveStageTransform();
+            glowEffect.transform.position = targetTransform.position;
+        }
     }
-}
 
 
     /// <summary>
@@ -51,32 +51,32 @@ public class PlayerEvolution : MonoBehaviour
 
         UpdateParticleScale();
 
-         while (lightOrbsCollected >= evolveThreshold)
-    {
-        lightOrbsCollected -= evolveThreshold;
+        while (lightOrbsCollected >= evolveThreshold)
+        {
+            lightOrbsCollected -= evolveThreshold;
 
-        if (currentStage == EvolutionStage.Egg)
-            SetStage(EvolutionStage.Chick);
-        else if (currentStage == EvolutionStage.Chick)
-            SetStage(EvolutionStage.Chicken);
-        else if (currentStage == EvolutionStage.Chicken)
-            SetStage(EvolutionStage.Phoenix);
-        else
-            break; // Phoenix이면 더 이상 진화하지 않음
+            if (currentStage == EvolutionStage.Egg)
+                SetStage(EvolutionStage.Chick);
+            else if (currentStage == EvolutionStage.Chick)
+                SetStage(EvolutionStage.Chicken);
+            else if (currentStage == EvolutionStage.Chicken)
+                SetStage(EvolutionStage.Phoenix);
+            else
+                break; // Phoenix이면 더 이상 진화하지 않음
+        }
     }
-}
 
 
     private void UpdateParticleScale()
-{
-    if (glowEffect != null)
     {
-        int multiplier = totalLightOrbsCollected / scaleIncreaseStep;
-        float newScale = glowBaseScale + (multiplier * scaleIncrement);
+        if (glowEffect != null)
+        {
+            int multiplier = totalLightOrbsCollected / scaleIncreaseStep;
+            float newScale = glowBaseScale + (multiplier * scaleIncrement);
 
-        glowEffect.transform.localScale = Vector3.one * newScale;
+            glowEffect.transform.localScale = Vector3.one * newScale;
+        }
     }
-}
 
     /// <summary>
     /// 현재 진화 단계를 설정하고, 다른 단계는 모두 비활성화
@@ -121,10 +121,39 @@ public class PlayerEvolution : MonoBehaviour
         currentStage = newStage;
 
         if (glowEffect != null)
-            {
-                 glowEffect.transform.position = GetActiveStageTransform().position;
-             }
+        {
+            glowEffect.transform.position = GetActiveStageTransform().position;
+        }
+
+        UpdateMoveSpeedByStage(); // 진화에 따른 속도 조절
+
     }
+
+    private void UpdateMoveSpeedByStage()
+{
+    PlayerMovement moveScript = GetComponent<PlayerMovement>();
+    if (moveScript == null) return;
+
+    float newSpeed = 3f; // 기본값
+
+    switch (currentStage)
+    {
+        case EvolutionStage.Egg:
+            newSpeed = 3f;
+            break;
+        case EvolutionStage.Chick:
+            newSpeed = 5f;
+            break;
+        case EvolutionStage.Chicken:
+            newSpeed = 7f;
+            break;
+        case EvolutionStage.Phoenix:
+            newSpeed = 10f;
+            break;
+    }
+
+    moveScript.moveSpeed = newSpeed;
+}
 
     private Transform GetActiveStageTransform()
     {
@@ -134,5 +163,6 @@ public class PlayerEvolution : MonoBehaviour
         if (phoenixObject.activeSelf) return phoenixObject.transform;
         return transform;
     }
+    
 
 }

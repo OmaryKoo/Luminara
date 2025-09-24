@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public float deceleration = 5f;
+    public float deceleration = 1f;
     public BoxCollider2D moveArea;
 
     private Vector2 startTouchPos;  // 🔹 터치 시작 위치
@@ -15,6 +15,11 @@ public class PlayerMovement : MonoBehaviour
     private Transform currentPlayer;
 
     private FollowCamera followCam;
+
+    public void SetSpeed(float newSpeed)
+    {
+        moveSpeed = newSpeed;
+    }
 
 void Start()
 {
