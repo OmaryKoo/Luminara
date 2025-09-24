@@ -38,7 +38,7 @@ public class LightOrb : MonoBehaviour
     {
         if (moveArea == null)
         {
-            Debug.LogWarning("🛑 moveArea가 설정되지 않았습니다.");
+            Debug.LogWarning("moveArea가 설정되지 않았습니다.");
             return;
         }
 
@@ -54,8 +54,14 @@ public class LightOrb : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            // 빛 오브젝트 수집 → 진화 트리거 시스템
             FindFirstObjectByType<PlayerEvolution>()?.CollectLightOrb();
+
+            // 점수 UI 반영
+            FindObjectOfType<LightCounter>()?.AddStar();
+
             Destroy(gameObject);
         }
     }
+
 }
