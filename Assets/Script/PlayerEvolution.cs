@@ -134,21 +134,21 @@ public class PlayerEvolution : MonoBehaviour
     PlayerMovement moveScript = GetComponent<PlayerMovement>();
     if (moveScript == null) return;
 
-    float newSpeed = 3f; // 기본값
+    float newSpeed = 5f; // 기본값
 
     switch (currentStage)
     {
         case EvolutionStage.Egg:
-            newSpeed = 3f;
-            break;
-        case EvolutionStage.Chick:
             newSpeed = 5f;
             break;
-        case EvolutionStage.Chicken:
+        case EvolutionStage.Chick:
             newSpeed = 7f;
             break;
+        case EvolutionStage.Chicken:
+            newSpeed = 9f;
+            break;
         case EvolutionStage.Phoenix:
-            newSpeed = 10f;
+            newSpeed = 15f;
             break;
     }
 
