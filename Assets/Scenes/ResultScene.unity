@@ -15392,11 +15392,43 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 517262655378254941, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 559576508013100083, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
+      propertyPath: m_MaxParticleSize
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 750468009836096185, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
       propertyPath: m_Name
       value: Style_4_1
       objectReference: {fileID: 0}
+    - target: {fileID: 750468009836096185, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958723038961777073, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
+      propertyPath: m_MaxParticleSize
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1963417223452075352, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
+      propertyPath: m_MaxParticleSize
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2134958670145925463, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
+      propertyPath: m_MaxParticleSize
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2204866331732024889, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
+      propertyPath: m_MaxParticleSize
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407218617541547109, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2441511438439943606, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
       propertyPath: m_MaxParticleSize
       value: 0.1
       objectReference: {fileID: 0}
@@ -15408,7 +15440,23 @@ PrefabInstance:
       propertyPath: m_MaxParticleSize
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 5465794146112973807, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
+      propertyPath: m_MaxParticleSize
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607337554577678986, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
+      propertyPath: m_MaxParticleSize
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5714760752388567843, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
+      propertyPath: m_MaxParticleSize
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6183769939879002771, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405758126244095062, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
       propertyPath: m_MaxParticleSize
       value: 0.1
       objectReference: {fileID: 0}
@@ -15416,7 +15464,31 @@ PrefabInstance:
       propertyPath: m_MaxParticleSize
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 6762448179489056474, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6978118371312476637, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
+      propertyPath: m_MaxParticleSize
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7136259544921932809, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7136259544921932809, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 27.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7347250310922934049, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7391345035989031277, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537802982329787727, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
       propertyPath: m_MaxParticleSize
       value: 0.1
       objectReference: {fileID: 0}
@@ -15430,7 +15502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7793111781021084024, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.8
+      value: -20.4
       objectReference: {fileID: 0}
     - target: {fileID: 7793111781021084024, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15463,6 +15535,26 @@ PrefabInstance:
     - target: {fileID: 7793111781021084024, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8031565318278287243, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047751005306001066, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
+      propertyPath: m_MaxParticleSize
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126943955198256868, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
+      propertyPath: m_MaxParticleSize
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545070584262808550, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
+      propertyPath: m_MaxParticleSize
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192062014243596528, guid: bf6f7adda21be9e419c58a825343c56e, type: 3}
+      propertyPath: m_MaxParticleSize
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
