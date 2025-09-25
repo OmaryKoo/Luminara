@@ -1262,6 +1262,10 @@ PrefabInstance:
       value: 0.0005
       objectReference: {fileID: 0}
     - target: {fileID: 8002578184059602804, guid: 6c19ebfc176fd7c4b8e8f49fa55618d2, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002578184059602804, guid: 6c19ebfc176fd7c4b8e8f49fa55618d2, type: 3}
       propertyPath: InitialModule.maxNumParticles
       value: 100
       objectReference: {fileID: 0}
@@ -1482,6 +1486,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 813536635639121124, guid: 6c19ebfc176fd7c4b8e8f49fa55618d2, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 6492719732604602569, guid: 6c19ebfc176fd7c4b8e8f49fa55618d2, type: 3}
       propertyPath: m_Name
       value: Style_2_1 (1)

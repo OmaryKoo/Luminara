@@ -10697,6 +10697,7 @@ GameObject:
   - component: {fileID: 1931046204}
   - component: {fileID: 1931046203}
   - component: {fileID: 1931046205}
+  - component: {fileID: 1931046206}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -10747,6 +10748,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starCountText: {fileID: 62927077}
+--- !u!114 &1931046206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931046202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b4c535fe42d5c7478dd697b2863ef40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FinalScore: 0
 --- !u!1001 &1932907052
 PrefabInstance:
   m_ObjectHideFlags: 0

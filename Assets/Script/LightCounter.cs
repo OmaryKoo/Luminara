@@ -10,6 +10,11 @@ public class LightCounter : MonoBehaviour
     {
         starCount++;
         starCountText.text = starCount.ToString();
+
+         if (ScoreManager.Instance != null)
+        {
+            ScoreManager.Instance.SetScore(starCount);
+        }
     }
 
     public int GetStarCount()

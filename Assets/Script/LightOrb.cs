@@ -58,7 +58,7 @@ public class LightOrb : MonoBehaviour
             FindFirstObjectByType<PlayerEvolution>()?.CollectLightOrb();
 
             // 점수 UI 반영
-            FindObjectOfType<LightCounter>()?.AddStar();
+            FindFirstObjectByType<LightCounter>()?.AddStar();
 
             Destroy(gameObject);
         }
