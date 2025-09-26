@@ -96,7 +96,7 @@ public class PlayerEvolution : MonoBehaviour
         if (evolutionEffectPrefab != null)
             {
                 GameObject effect = Instantiate(evolutionEffectPrefab, currentPosition, Quaternion.identity);
-                Destroy(effect, 1f); // 3초 후 자동 삭제 (파티클 지속시간에 맞춰 조정)
+                Destroy(effect, 0.2f); // 0.2초 후 자동 삭제
             }
 
         // 모든 오브젝트 비활성화
