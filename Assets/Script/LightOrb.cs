@@ -2,10 +2,17 @@ using UnityEngine;
 
 public class LightOrb : MonoBehaviour
 {
-    [Header("🔸 Movement Settings")]
+    [Header("Light Info")]
+    [TextArea]
+    public string lightMessage; //빛 대표메세지
+
+    [Header("Movement Settings")]
     public BoxCollider2D moveArea; // order에 붙어 있어야 함
     public float moveSpeed = 2f;
     public float waitTime = 1.5f;
+
+    //[Header("Rotation Settings")]
+    //public float rotateSpeed = 90f; // 초당 회전 속도 (양수: 시계방향, 음수: 반시계방향)
 
     private Vector3 targetPosition;
     private float waitTimer = 0f;
@@ -32,6 +39,7 @@ public class LightOrb : MonoBehaviour
                 waitTimer = waitTime;
             }
         }
+         //transform.Rotate(Vector3.forward * rotateSpeed * Time.deltaTime);
     }
 
     private void PickNewTarget()
@@ -59,6 +67,9 @@ public class LightOrb : MonoBehaviour
 
             // 점수 UI 반영
             FindFirstObjectByType<LightCounter>()?.AddStar();
+
+            //UI 텍스처 메세지 반영
+            FindFirstObjectByType<LightUIManager>()?.ShowLight(lightMessage);
 
             Destroy(gameObject);
         }

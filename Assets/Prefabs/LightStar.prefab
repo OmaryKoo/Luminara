@@ -26,11 +26,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4102942496522764, guid: 773165e2b001b9c49b0169aabddcb9bc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.57
+      value: -3.77
       objectReference: {fileID: 0}
     - target: {fileID: 4102942496522764, guid: 773165e2b001b9c49b0169aabddcb9bc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.99
+      value: 7.11
       objectReference: {fileID: 0}
     - target: {fileID: 4102942496522764, guid: 773165e2b001b9c49b0169aabddcb9bc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -99,6 +99,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1896829412129274, guid: 773165e2b001b9c49b0169aabddcb9bc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7667836745880135587}
+    - targetCorrespondingSourceObject: {fileID: 1896829412129274, guid: 773165e2b001b9c49b0169aabddcb9bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3433176197416082379}
   m_SourcePrefab: {fileID: 100100000, guid: 773165e2b001b9c49b0169aabddcb9bc, type: 3}
 --- !u!1 &1313361042798970651 stripped
 GameObject:
@@ -135,9 +138,26 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.4
+--- !u!114 &3433176197416082379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313361042798970651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39c9df8f705c39e4dbe8e6337910e9fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightSprite: {fileID: 0}
+  lightMessage: 
+  moveArea: {fileID: 0}
+  moveSpeed: 3
+  waitTime: 0

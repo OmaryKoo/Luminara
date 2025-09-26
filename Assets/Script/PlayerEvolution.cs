@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerEvolution : MonoBehaviour
 {
+
+    public GameObject evolutionEffectPrefab;
     // 현재 진화 단계를 저장하는 변수
     public EvolutionStage currentStage = EvolutionStage.Egg;
 
@@ -89,6 +91,13 @@ public class PlayerEvolution : MonoBehaviour
         else if (chickObject.activeSelf) currentPosition = chickObject.transform.position;
         else if (chickenObject.activeSelf) currentPosition = chickenObject.transform.position;
         else if (phoenixObject.activeSelf) currentPosition = phoenixObject.transform.position;
+
+        // 진화 이펙트 생성
+        if (evolutionEffectPrefab != null)
+            {
+                GameObject effect = Instantiate(evolutionEffectPrefab, currentPosition, Quaternion.identity);
+                Destroy(effect, 1f); // 3초 후 자동 삭제 (파티클 지속시간에 맞춰 조정)
+            }
 
         // 모든 오브젝트 비활성화
         eggObject.SetActive(false);
